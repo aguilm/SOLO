@@ -50,6 +50,15 @@ main section p {
 }
 
 footer {
+    font-family: Arial, sans-serif;
+    color: #ffffff;
+    text-align: center;
+    padding: 10
+}
+
+footer h6 {
+    font-family: Arial, sans-serif;
+    color: #ffffff;
     text-align: center;
     padding: 10
 }
