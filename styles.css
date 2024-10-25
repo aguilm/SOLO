@@ -11,13 +11,44 @@ html, body {
 body {
     font-family: cursive;
     line-height: 1.6;
-    color: #000000;
-    background-color: #19ff9fd0;
+    color: #000000; /* Text color */
     padding: 20px;
     text-align: center;
+    position: relative;
+    height: 100vh; /* Full height of the viewport */
+    margin: 0; /* Remove default margin */
+    overflow: hidden; /* Prevent overflow if needed */
+    background-image: url(https://www.peopleschurchtoday.org/images/files/gratitude.jpg); /* Background image */
+    background-size: cover; /* Cover the entire viewport */
+    background-repeat: no-repeat; /* Prevent the image from repeating */
+    background-position: center; /* Center the image */
+    }
     
+    body::after {
+    content: ''; /* Required for the pseudo-element */
+    position: absolute; /* Position it absolutely within the body */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(255, 255, 255, 0.5); /* White overlay with 50% opacity */
+    z-index: 0; /* Send the overlay behind the text */
+    }
+    
+h1, p {
+    position: relative; /* Required to place text above the overlay */
+    z-index: 1; /* Bring text above the overlay */
 }
 
+header, .container, footer {
+    position: relative; /* Position relative to allow for z-index stacking */
+    z-index: 2; /* Ensure content is above the overlay */
+}
+
+h2, h3, p {
+    color: #000000; /* Text color */
+    text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.8); /* Optional: Adds a light shadow for better readability */
+} 
 header {
     text-align: center;
     margin-bottom: 20px;
@@ -78,7 +109,7 @@ footer h6 {
 .column {
     flex: 1; /* Ensures the columns are equal width */
     padding: 20px; /* Adds padding inside each column */
-    border: 1px solid #ccc; /* Optional: Adds a border for better visibility */
+    border: 1px solid #000000; /* Optional: Adds a border for better visibility */
 }
 
 p {
